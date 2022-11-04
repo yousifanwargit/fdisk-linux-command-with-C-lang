@@ -1,0 +1,12 @@
+THIS IS MY NEW COMMAND >>>> myfdisk
+
+this command is used to read the MBR or EBR and list all the partitions which hdd have
+
+
+TO RUN THE COMMAND 
+    -go to "build" dir and do the "$make" command
+
+TO USE THE COMMAND 
+    - $sudo ./myfdisk /dev/sd*
+    or you can install the command first by "$make install"
+        - $sudo myfdisk /dev/sd*
