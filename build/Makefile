@@ -1,6 +1,6 @@
 
 myfdisk :
-	gcc -o myfdisk ../myfdisk.c
+	gcc ../myfdisk.c -o myfdisk  
 
 install :
 	cp myfdisk /usr/bin

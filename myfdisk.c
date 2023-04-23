@@ -21,6 +21,7 @@ typedef struct{
     uint32_t lba;
     uint32_t sector_count;
 }ebr_entry;
+
 int main(int argc, char **argv){
 
     char buf[512];
@@ -38,6 +39,7 @@ int main(int argc, char **argv){
             "Device","Boot","Start","End","Sectors","Size","Id","Type");
     
     for(int i=0; i<4 ; i++){
+        
         if(table_entry_ptr[i].partition_type == 0x83){
             partition_type[i] = "Linux";
         }
@@ -53,6 +55,11 @@ int main(int argc, char **argv){
         else{
             partition_type[i] = "non";
         }
+        
+        if(table_entry_ptr[i].sector_count == 0){
+            continue;
+        }
+        
         printf("%s%d  |%-10c |%-10u |%-10u |%-10u |%-9uG |%-10X |%-10s\n",
             argv[1],
             i+1,
